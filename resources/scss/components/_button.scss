@@ -1,0 +1,35 @@
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 15px;
+    height: 32px;
+    font-weight: 500;
+    line-height: 1;
+    color: #fff;
+    background-color: #E92B43;
+    border: 1px solid #E92B43;
+    border-radius: 16px;
+    transition: color .3s ease, background-color .3s ease, border-color .3s ease;
+    &:hover {
+        color: #fff;
+        background-color: #cc2439;
+        border-color: #cc2439;
+    }
+}
+
+.button-gray {
+    font-weight: 400;
+    color: #000;
+    background-color: #fff;
+    border-color: #E7E7EC;
+    transition: color .3s ease, background-color .3s ease, border-color .3s ease;
+    &.active, &:hover {
+        color: #fff;
+        background-color: #E92B43;
+        border-color: #E92B43;
+    }
+    &.active {
+        font-weight: 500;
+    }
+}

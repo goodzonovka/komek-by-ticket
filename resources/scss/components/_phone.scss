@@ -1,0 +1,51 @@
+.phone-list {
+    &__inner {
+        position: relative;
+    }
+
+    &__button {
+        display: flex;
+        column-gap: 5px;
+        transition: color .3s ease;
+        &:hover, &.active {
+            color: #A0AEB7;
+        }
+
+        &.active {
+            & + .phone-list__dropdown {
+                margin-top: 10px;
+                visibility: visible;
+                opacity: 1;
+            }
+
+            svg {
+                transform: rotate(-180deg);
+            }
+        }
+
+        svg {
+            margin-top: 4px;
+            transition: transform .3s ease;
+        }
+    }
+
+    &__dropdown {
+        position: absolute;
+        top: 100%;
+        margin-top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 158px;
+        padding: 12px 10px;
+        background-color: #0a2e39;
+        border-radius: 6px;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        opacity: 0;
+        visibility: hidden;
+        transition: margin-top .3s ease, opacity .3s ease, visibility .3s ease;
+
+        li:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+}

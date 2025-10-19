@@ -1,0 +1,121 @@
+.mobile-menu {
+    &.active {
+        .mobile-menu__bg {
+            opacity: 1;
+            visibility: visible;
+        }
+        .mobile-menu__inner {
+            transform: translateX(0%);
+        }
+    }
+    &__bg {
+        position: fixed;
+        z-index: 1;
+        inset: 0;
+        background: rgba(0, 0, 0, .34);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .3s ease, visibility .3s ease;
+    }
+    &__inner {
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        transform: translateX(100%);
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        background-color: #fff;
+        transition: transform .3s ease;
+    }
+    &__button-open {
+        padding: 8px 12px;
+        fill: #fff;
+    }
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #123D4B;
+        padding: 16px;
+    }
+    &__button-close {
+        padding: 8px;
+        fill: #fff;
+    }
+
+    &__body {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+    }
+
+    .nav {
+        margin-left: -20px;
+        margin-right: -20px;
+        li:not(:last-child) {
+            border-bottom: 1px solid #E7E7EC;
+        }
+        a {
+            display: block;
+            padding: 16px;
+            font-size: 18px;
+            color: #000;
+            &:hover {
+                color: #3DC76F;
+            }
+        }
+    }
+
+    .header-bottom__buttons {
+        order: -1;
+        justify-content: center;
+        gap: 16px;
+        .button {
+            width: 50%;
+            max-width: 160px;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 16px;
+        background-color: #123D4B;
+        .button {
+            order: -1;
+            width: 240px;
+        }
+    }
+
+    .social {
+        justify-content: center;
+        a:hover {
+            color: #123D4B;
+        }
+        svg {
+            width: 34px;
+            height: 34px;
+        }
+    }
+
+    @media (min-width: 568px) {
+        &__inner {
+            width: 55%;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        display: none;
+        &__button-open {
+            display: none;
+        }
+    }
+}
